@@ -1,6 +1,6 @@
 # DORK-RECON
 
-Is a powerful utility designed for cybersecurity professionals, penetration testers, and OSINT (Open Source Intelligence) researchers to mine valuable information using advanced Google search queries known as Google Dorks.
+A powerful tool designed for cybersecurity professionals, penetration testers, and OSINT (Open Source Intelligence) researchers to mine valuable information using advanced Google search queries known as Google Dorks.
 
 ---
 
