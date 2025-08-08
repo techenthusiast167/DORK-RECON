@@ -128,7 +128,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
  - Click Add to create a new search engine.
 
-- In the Sites to search box, input **www.example.com** or * for entire web search (note: full web search might require configuration steps).
+- In the Sites to search box, input **www.example.com** or for entire web search (note: full web search might require configuration steps).
 
 - Give the CSE a name and create.
 
@@ -145,11 +145,13 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 ---
 
-Running the Tool
+# Running the Tool
 
 **Manual installation**: 
 
 - Save the tool script via the link below:
+
+- Link isn't up yet…
 
 -Example: copy the script via the link and paste it into nano. Type **Ctrl + O. Enter, Ctrl + X** to exit.
 
@@ -159,6 +161,8 @@ Running the Tool
 
 
       python3 dork_recon.py --interactive
+  
+
 
 **List all built-in dork categories**:
 
@@ -174,10 +178,69 @@ Running the Tool
 
       python3 dork_recon.py --dork wordpress --num_results 10 --output results.json
 
-**NOTE** Alway customize your search query to save resullts to json with the name you want. Avoid running your search query without specifying your output to avoid having no data retrievability.
+**NOTE**: Alway customize your search query to save results to json with the name you want. Avoid running your search query without specifying your output to avoid having no data retrievability.
 
 
 ---
+
+# NOTE: 
+
+In the **Interactive Mode**, you can enter any Google search query of your choice to obtain the most relevant and precise results.
+
+- **Example**:
+
+
+- Find all indexed pages on example.com:
+
+      site:example.com
+
+- Search for pages containing the exact phrase “admin login”:
+
+        "admin login"
+   
+  
+- Find PDF files related to cybersecurity:
+
+      filetype:pdf cybersecurity
+  
+ 
+Get current weather information for New York:
+
+    weather:new york
+
+
+Locate web pages with “index of” in the title and mention “backup”:
+
+    
+    intitle:"index of" backup
+
+
+Find social media site containing a specific username:
+
+    site:social/username (site:x.com ctprecious ) 
+
+And more!!
+
+**How to Use These Queries in the Tool's Interactive Section**:
+
+
+**Start the tool in interactive mode**:
+
+    python3 dork_recon.py --interactive
+
+
+- Enter any of the above queries exactly as shown (or your own variations) at the prompt:
+
+- **Enter Google search query**:
+  
+
+- The tool will run the query against Google Custom Search API and display results back with colored formatting.
+  
+- **To exit interactive mode, type**:
+  
+- **exit**
+  
+- - - 
 
 # Further Notes
 
