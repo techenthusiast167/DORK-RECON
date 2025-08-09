@@ -107,17 +107,17 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **2.Enable Custom Search API**:
 
-- In the left-hand menu, click APIs & Services > Library.
+- In the left-hand menu, click **APIs & Services > Library**.
 
-- Search for Custom Search API.
+- Search for **Custom Search API**.
 
 - Enable the API for your project.
 
 **3.Create API Credentials**:
 
-- Go to APIs & Services > Credentials.
+- Go to **APIs & Services > Credentials**.
 
-- Click Create Credentials > API Key.
+- Click **Create Credentials > API Key**.
 
 - **Copy the generated API Key**.
 
@@ -126,7 +126,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 - Visit Google Custom Search: https://cse.google.com/cse/all
 
- - Click Add to create a new search engine.
+ - Click **Add** to create a new search engine.
 
 - In the Sites to search box, input **www.example.com** or for entire web search (note: full web search might require configuration steps).
 
@@ -136,7 +136,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 - On the CSE control panel, click on the search engine you created.
 
-- Copy the Search engine ID from the Details page (a string like 012345678901234567890:abcde_fghij).
+- Copy the **Search engine ID** from the Details page (a string like **012345678901234567890:abcde_fghij**).
 
 **6.Update your script**:
 
@@ -161,8 +161,34 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 
       python3 dork_recon.py --interactive
-  
 
+**Toggle Google Safe Search**:
+
+- Safe Search on (default):
+  
+      --safe_search on
+
+- Safe Search Off:
+
+      --safe_search off
+
+When you run the script, you can specify it as:
+
+    python3 dork_recon.py --dork wordpress --safe_search off/on (depending on your choice)
+    
+**Or for interactive mode**:
+
+    python3 dork_recon.py --interactive --safe_search on
+
+
+**How to verify the safe search is active**:
+
+- Run with **--safe_search on** and a query likely to return explicit content.
+
+- Compare results with --safe_search off.
+
+- Results should be filtered in the first case.
+  
 
 **List all built-in dork categories**:
 
@@ -174,11 +200,27 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 
 - **Single dork or category**:
+  
+       python3 dork_recon.py --dork wordpress --num_results 10 --output filename/json
+---
+
+       python3 dork_recon.py --dork "inurl:view/view.shtml" --output filename/json
+
+  **Or if you want to search this specific dork on a domain, add the --domain option**:
+
+        python3 dork_recon.py --domain example.com --dork "inurl:view/view.shtml" --output filename/json
+---
+
+        python3 dork_recon.py --dork "weather in New York" --num_results 10 --output filename/json
+
+---
+        python3 dork_recon.py --dork "maps of New York" --num_results 5 --output filename/json
 
 
-      python3 dork_recon.py --dork wordpress --num_results 10 --output results.json
+**Feel free enter any Google search query of your choice to obtain the most relevant and precise results.**
+  
 
-**NOTE**: Alway customize your search query to save results to json with the name you want. Avoid running your search query without specifying your output to avoid having no data retrievability.
+**NOTE**: Save all results from your entered dorks into your prefer filename.json Avoid running your search query without specifying your filename.output to avoid having no data retrievability.
 
 
 ---
@@ -252,5 +294,9 @@ And more!!
 
 - The interactive mode supports free-form Google queries, beyond built-in dork categories.
 
-- Results are printed with color formatting for readability.
+---
+
+If you encounter any issues or have questions about using this tool, please feel free to reach out. You can report bugs, request features, or ask for help by opening an issue on the GitHub repository or contacting the author directly.Your feedback is valuable and helps improve the tool for the community. 
+
+
 
