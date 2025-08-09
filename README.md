@@ -155,9 +155,11 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 -Example: copy the script via the link and paste it into nano. Type **Ctrl + O. Enter, Ctrl + X** to exit.
 
-- Examples of usage:
+- - - 
 
-- **Interactive Mode**:
+**Examples of usage**:
+
+**Interactive Mode**:
 
 
       python3 dork_recon.py --interactive
@@ -172,7 +174,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
       --safe_search off
 
-When you run the script, you can specify it as:
+**When you run the script, you can specify it as**:
 
     python3 dork_recon.py --dork wordpress --safe_search off/on (depending on your choice)
     
@@ -196,31 +198,98 @@ When you run the script, you can specify it as:
     python3 dork_recon.py --list_dorks
     
 
-- Enter any Google query or dork interactively. Type exit to quit.
+- Enter any Google query or dork interactively. Type **exit** to quit.
 
+- - -
 
 - **Single dork or category**:
   
        python3 dork_recon.py --dork wordpress --num_results 10 --output filename/json
+
 ---
+
+    python3 dork_recon.py --dork "weather in New York" --num_results 10 --output filename/json
+
+
+- - - 
+
+    python3 dork_recon.py --dork "maps of New York" --num_results 5 --output filename/json
+
+    
+- - - 
 
        python3 dork_recon.py --dork "inurl:view/view.shtml" --output filename/json
 
   **Or if you want to search this specific dork on a domain, add the --domain option**:
 
-        python3 dork_recon.py --domain example.com --dork "inurl:view/view.shtml" --output filename/json
----
+        python3 dork_recon.py --domain example.com --dork "inurl:view/view.shtml" --output filename/json      
 
-        python3 dork_recon.py --dork "weather in New York" --num_results 10 --output filename/json
+- - - 
 
----
-        python3 dork_recon.py --dork "maps of New York" --num_results 5 --output filename/json
+**Bulk Search Mode (Running Queries from a File)**
 
+**1. Prepare your Dork File**:
+  
+- Create a text file (e.g., **dorks.txt**) with one Google dork query or category name per line. For example:
+  
+      wordpress
+      credentials
+      inurl:wp-login.php
+      filetype:env password
+      site:example.com inurl:admin
+
+
+  **2. Run the Tool with the File**:
+  
+- Use the --dork_file argument pointing to your file:
+
+      python3 dork_recon.py --dork_file dorks.txt --num_results 10 filename.json
+  
+**This tells the tool to read all queries from the file and run the Google Custom Search API on each and save them to your filename**. 
+
+- - - 
+
+**Multi-threaded Execution and Delay Configuration**
+
+**1.Enable Multi-threading**:
+
+- Use the --threads option to specify how many threads (parallel workers) the tool uses for searching.
+  
+**Example**:
+
+    python3 dork_recon.py --dork_file dorks.txt --threads 4 --num_results 10 filename.json
+
+**This runs up to 4 dork searches concurrently, speeding up the overall process**.
+
+- - - 
+
+**Configure Delay Between Requests:
+Use the --delay option to set the waiting time (in seconds) between API requests per thread to avoid rate-limiting or IP blocking.**
+
+**Example**:
+
+
+    python3 dork_recon.py --dork_file dorks.txt --threads 4 --delay 3 --num_results 10 filename.json
+
+
+Here, each thread waits 3 seconds between its Google API calls.
+
+**How It Works Internally**:
+
+- The tool queues all dork queries.
+Multiple worker threads take items from the queue and perform searches in parallel.
+
+- The delay between requests per thread helps stay within API usage limits.
+
+- - - 
 
 **Feel free enter any Google search query of your choice to obtain the most relevant and precise results.**
-  
 
-**NOTE**: Save all results from your entered dorks into your prefer filename.json Avoid running your search query without specifying your filename.output to avoid having no data retrievability.
+- - - 
+
+**Note**: 
+
+To ensure all results from your entered dorks are preserved, please specify your preferred output filename using the --output option (e.g., **--output filename.json**). Avoid running search queries without setting an output file to prevent loss of result data.
 
 
 ---
