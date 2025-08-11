@@ -153,11 +153,17 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **https://gist.github.com/techenthusiast167/a7bc8bc599ce469f1b8984b25d754515**
 
--Example: copy the script via the link and paste it into nano. Type **Ctrl + O. Enter, Ctrl + X** to save exit. 
+-Example: copy the script via the link and paste it into nano. Type **Ctrl + O. Enter, Ctrl + X** to save and exit. 
 
 - - - 
 
 **Examples of usage**:
+
+     python3 dork_recon.py --help
+
+**This will show list of options on how to use the tool**.
+
+- For examples:
 
 **Interactive Mode**:
 
@@ -203,6 +209,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 - - -
 
 - **Single dork or category**:
+
   
        python3 dork_recon.py --dork wordpress --num_results 10 --output filename/json
 
@@ -346,9 +353,10 @@ And more!!
   
 
 - The tool will run the query against Google Custom Search API and display results back with colored formatting.
+
   
 - **To exit interactive mode, type**:
-  
+
 - **exit**
   
 - - - 
@@ -364,6 +372,10 @@ And more!!
 - The interactive mode supports free-form Google queries, beyond built-in dork categories.
 
 ---
+
+( keep in mind - you can increase the **- - num_results** from 10 to 50 and 100 maximum on the number of Google search results to retrieve per your query search (default usually 10 ).
+
+- - - 
 
 If you encounter any issues or have questions about using this tool, please feel free to reach out. You can report bugs, request features, or ask for help by opening an issue on the GitHub repository or contacting the author directly.Your feedback is valuable and helps improve the tool for the community. 
 
