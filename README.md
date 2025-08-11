@@ -170,14 +170,11 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **Interactive Mode**:
 
-- Enter any Google search query manually and get immediate, real-time results.
-
 
       python3 dork_recon.py --interactive
 
 **Safe Search**:
 
-- Filter out explicit, adult, or inappropriate content from the search results
 
 - Safe Search on (default):
   
@@ -189,7 +186,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **When you run the script, you can specify it as**:
 
-    python3 dork_recon.py --dork wordpress --safe_search off/on (depending on your choice) filename/json
+    python3 dork_recon.py --dork wordpress --safe_search off/on (depending on your choice) filename.json
     
 **Or for interactive mode**:
 
@@ -207,8 +204,6 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **List all built-in dork categories**:
 
-- Lists all available built-in dork categories that the tool supports
-
 
       python3 dork_recon.py --list_dorks
     
@@ -220,25 +215,25 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 - **Single dork or category**:
 
   
-       python3 dork_recon.py --dork  inurl:wp-login.php --num_results 10 --output filename/json
+       python3 dork_recon.py --dork  inurl:wp-login.php --num_results 10 --output filename.json
 
 ---
 
-    python3 dork_recon.py --dork "weather in New York" --num_results 10 --output filename/json
+    python3 dork_recon.py --dork "weather in New York" --num_results 10 --output filename.json
 
 
 - - - 
 
-    python3 dork_recon.py --dork "maps of New York" --num_results 5 --output filename/json
+    python3 dork_recon.py --dork "maps of New York" --num_results 5 --output filename.json
 
     
 - - - 
 
-       python3 dork_recon.py --dork "inurl:view/view.shtml" --output filename/json
+       python3 dork_recon.py --dork "inurl:view/view.shtml" --output filename.json
 
   **Or if you want to search this specific dork on a domain, add the --domain option**:
 
-        python3 dork_recon.py --domain example.com --dork "inurl:view/view.shtml" --output filename/json      
+        python3 dork_recon.py --domain example.com --dork "inurl:view/view.shtml" --output filename.json      
 
 - - - 
 
@@ -299,20 +294,8 @@ Multiple worker threads take items from the queue and perform searches in parall
 
 - - - 
 
-**Feel free enter any Google search query of your choice to obtain the most relevant and precise results.**
 
-- - - 
-
-**Note**: 
-
-To ensure all results from your entered dorks are preserved, please specify your preferred output filename using the --output option (e.g., **--output filename.json**). Avoid running search queries without setting an output file to prevent loss of result data.
-
-
----
-
-# NOTE: 
-
-In the **Interactive Mode**, you can enter any Google search query of your choice to obtain the most relevant and precise results.
+- In the **Interactive Mode**, you can enter any Google search query of your choice to obtain the most relevant and precise results.
 
 - **Example**:
 
@@ -370,7 +353,15 @@ And more!!
   
 - - - 
 
-# Further Notes
+# Notes:
+
+- Feel free to enter any Google search query of your choice to obtain the most relevant and precise results.
+
+
+- To ensure all results from your entered dorks are preserved, please specify your preferred output filename using the --output option (e.g., **--output filename.json**). Avoid running search queries without setting an output file to prevent loss of result data.
+
+- Replace the **filename** with the actual name you want to save the file with.
+
 
 - Respect Google API rate limits: the tool enforces delays and request batching.
 
@@ -380,13 +371,11 @@ And more!!
 
 - The interactive mode supports free-form Google queries, beyond built-in dork categories.
 
----
-
-( keep in mind - you can increase the **- - num_results** from 10 to 50 and 100 maximum on the number of Google search results to retrieve per your query search (default usually 10 ).
+- keep in mind - you can increase the **- - num_results** from 10 to 50 and 100 maximum on the number of Google search results to retrieve per your query search (default usually 10 ).
 
 - - - 
 
-If you encounter any issues or have questions about using this tool, please feel free to reach out. You can report bugs, request features, or ask for help by opening an issue on the GitHub repository or contacting the author directly.Your feedback is valuable and helps improve the tool for the community. 
+- If you encounter any issues or have questions about using this tool, please feel free to reach out. You can report bugs, request features, or ask for help by opening an issue on the GitHub repository or contacting the author directly.Your feedback is valuable and helps improve the tool for the community. 
 
 
 
