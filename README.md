@@ -363,13 +363,13 @@ And more!!
 - Replace the **filename** with the actual name you want to save the file with.
 
 
-- Respect Google API rate limits: the tool enforces delays and request batching.
+- Respect **Google API rate limits**: the tool enforces delays and request batching.
 
-- The tool supports Safe Search filtering toggling.
+- The tool supports **Safe Search** filtering toggling.
 
-- Always use the tool ethically, with permission on target domains.
+- Always use the **tool ethically**, with permission on **target domains**.
 
-- The interactive mode supports free-form Google queries, beyond built-in dork categories.
+- The **interactive mode** supports free-form Google queries, beyond built-in dork categories.
 
 - keep in mind - you can increase the **- - num_results** from 10 to 50 and 100 maximum on the number of Google search results to retrieve per your query search (default usually 10 ).
 
