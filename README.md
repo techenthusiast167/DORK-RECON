@@ -159,18 +159,25 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **Examples of usage**:
 
-     python3 dork_recon.py --help
 
-**This will show list of options on how to use the tool**.
+- **HELP**:
+  
+      python3 dork_recon.py --help
+  
+- This will show list of options on how to use the tool.
 
-- For examples:
+
 
 **Interactive Mode**:
+
+- Enter any Google search query manually and get immediate, real-time results.
 
 
       python3 dork_recon.py --interactive
 
-**Toggle Google Safe Search**:
+**Safe Search**:
+
+- Filter out explicit, adult, or inappropriate content from the search results
 
 - Safe Search on (default):
   
@@ -200,8 +207,10 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **List all built-in dork categories**:
 
+- Lists all available built-in dork categories that the tool supports
 
-    python3 dork_recon.py --list_dorks
+
+      python3 dork_recon.py --list_dorks
     
 
 - Enter any Google query or dork interactively. Type **exit** to quit.
@@ -211,7 +220,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 - **Single dork or category**:
 
   
-       python3 dork_recon.py --dork wordpress --num_results 10 --output filename/json
+       python3 dork_recon.py --dork  inurl:wp-login.php --num_results 10 --output filename/json
 
 ---
 
