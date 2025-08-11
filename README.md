@@ -189,7 +189,7 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 **When you run the script, you can specify it as**:
 
-    python3 dork_recon.py --dork wordpress --safe_search off/on (depending on your choice)
+    python3 dork_recon.py --dork wordpress --safe_search off/on (depending on your choice) filename/json
     
 **Or for interactive mode**:
 
