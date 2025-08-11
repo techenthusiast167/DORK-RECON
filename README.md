@@ -151,9 +151,9 @@ By automating these queries to Google Custom Search API, the tool helps quickly 
 
 - Save the tool script via the link below:
 
-- Link isn't up yet…
+**https://gist.github.com/techenthusiast167/a7bc8bc599ce469f1b8984b25d754515**
 
--Example: copy the script via the link and paste it into nano. Type **Ctrl + O. Enter, Ctrl + X** to exit.
+-Example: copy the script via the link and paste it into nano. Type **Ctrl + O. Enter, Ctrl + X** to save exit. 
 
 - - - 
 
